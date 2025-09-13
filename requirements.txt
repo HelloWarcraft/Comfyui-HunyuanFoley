@@ -1,33 +1,25 @@
-# --- Small extras used by the node (writing temp MP4 from image tensors)
-imageio>=2.34.0
-imageio-ffmpeg>=0.4.9
+# Core ML dependencies (numpy and scipy are often pulled in by torch)
+numpy
+scipy
 
-# --- Logging / progress / config
-loguru>=0.7.0
-tqdm>=4.66.0
-pyyaml>=6.0.0
-omegaconf>=2.3.0
-easydict>=1.10
+# Deep Learning frameworks
+diffusers
+timm
+accelerate
 
-# --- Core libs the Hunyuan package uses
-sentencepiece>=0.2.0
-einops>=0.7.0
-pillow>=10.0.0
-av>=10.0.0
-pandas>=2.2.0
-pyarrow>=15.0.0
-scipy>=1.11.0
+# Transformers for loading SigLIP2 and CLAP models from Hugging Face
+transformers
+sentencepiece
 
-# --- HF stack (work well with PyTorch 2.8 in ComfyUI portable)
-accelerate>=0.33.0
-diffusers>=0.30.0
-timm>=0.9.16
-
-# transformers special branch used by the repo
-git+https://github.com/huggingface/transformers@v4.49.0-SigLIP-2
-
-# --- Audio toolbox required by Hunyuan (Descript)
+# Audio VAE model (requires direct git install)
 git+https://github.com/descriptinc/audiotools
 
-# --- (Optional but matches upstream reqs pin)
-urllib3==2.4.0
+# Image & Tensor manipulation
+pillow
+einops
+
+# Configuration and Utilities
+pyyaml
+omegaconf
+loguru
+tqdm
